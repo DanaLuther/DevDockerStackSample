@@ -1,4 +1,4 @@
-#Converting your DEV Environment to a Docker Stack
+# Converting your DEV Environment to a Docker Stack
 
 To start this basic LEMP stack:\
 ```docker stack deploy -c docker-compose.yml sunshine```
@@ -17,6 +17,6 @@ Additional Files:
  * _mysite.conf_ : Sample nginx configuration for this application
  * _root_db_password.txt_ : Secret file for the mysql image
  
-Note: Want to use composer? It doesn't need to be in your stack or installed locally
-See https://store.docker.com/images/composer
+### Note: Want to use composer? It doesn't need to be in your stack or installed locally
+See https://store.docker.com/images/composer \
 ```docker run --rm -it --volume $PWD:/app composer install```
