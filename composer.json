@@ -1,0 +1,14 @@
+{
+    "name": "dhluther/sunshine2018",
+    "description": "Sample composer.json file for illustrating the use of the composer docker image",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Dana Luther",
+            "email": "dluther@envisageinternational.com"
+        }
+    ],
+    "require": {
+        "twbs/bootstrap": "^4.0"
+    }
+}
