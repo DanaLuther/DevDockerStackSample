@@ -12,7 +12,15 @@ Sample Web Folder:
 Sample docker-compose files:
  * _docker-compose.yml_ : Basic LEMP stack
  * _docker-compose-clientA.yml_ : Modified stack for client with alternate php version
+ * _docker-compose-custom-php.yml_ : Modified stack with custom php image that has the MySQLi extension enabled
  * _docker-compose-with-selenium.yml_ : LEMP stack with services defined for chrome and firefox selenium images
+
+Sample custom php extension enabled Dockerfiles:\
+(For build instructions, see the Readme file in the php-image-options folder. Alternately you can pull the images from here: https://hub.docker.com/r/dhluther/php/ )
+ * _php-image-options/Dockerfile-7-fpm_ : Base PHP 7-fpm image with the MySQLi extension enabled
+ * _php-image-options/Dockerfile-7-fpm-all-the-goodies_ : Base PHP 7-fpm image with the MySQLi, mcrypt, zip, and iconv
+ 
+
  
 Additional Files:
  * _mysite.conf_ : Sample nginx configuration for this application
