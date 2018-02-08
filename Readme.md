@@ -2,7 +2,8 @@
 
 To start this basic LEMP stack:\
 ```docker stack deploy -c docker-compose.yml sunshine```
-To take the stack down
+
+To take the stack down\
 ```docker stack rm sunshine```
 
 Sample Web Folder:
@@ -16,6 +17,7 @@ Sample docker-compose files:
 Additional Files:
  * _mysite.conf_ : Sample nginx configuration for this application
  * _root_db_password.txt_ : Secret file for the mysql image
+ * _composer.json_ : Sample composer file 
  
 ### Note: Want to use composer? It doesn't need to be in your stack or installed locally
 See https://store.docker.com/images/composer \
