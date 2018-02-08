@@ -3,7 +3,7 @@
 To start this basic LEMP stack:\
 ```docker stack deploy -c docker-compose.yml sunshine```
 
-To take the stack down\
+To take the stack down:\
 ```docker stack rm sunshine```
 
 Sample Web Folder:
