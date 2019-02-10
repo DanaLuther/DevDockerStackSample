@@ -1,0 +1,16 @@
+docker image ls -f reference=nginx:*alpine
+
+docker image ls -f reference=php:7*
+
+docker image inspect $(docker image ls -q -f reference=php:7.0-fpm)
+
+docker image pull mysql/mysql-server:8.0
+
+(Kathy)
+docker run --name=mysql8 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -d mysql/mysql-server:8.0
+
+(shell for mysql)
+docker exec -it mysql8 mysqlsh -uroot –mysql -S/var/lib/mysql/mysql.sock
+
+(shell for mysql document store)
+docker exec -it mysql8 mysqlsh -uroot -S/var/run/mysqld/mysqlx.sock

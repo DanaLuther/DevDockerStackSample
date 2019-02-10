@@ -1,0 +1,16 @@
+docker stack deploy -c docker-compose.yml sunshine
+
+# open http://localhost/
+
+docker stack ps sunshine
+
+docker stack services sunshine
+docker service ls
+
+docker stack deploy -c docker-compose-portainer.yml portainer
+#Note difference between stack services and service ls now that there are two stacks
+
+docker stack rm sunshine
+docker stack rm portainer
+
+# open http://localhost/

@@ -14,6 +14,7 @@ Sample docker-compose files:
  * _docker-compose-clientA.yml_ : Modified stack for client with alternate php version
  * _docker-compose-custom-php.yml_ : Modified stack with custom php image that has the MySQLi extension enabled
  * _docker-compose-with-selenium.yml_ : LEMP stack with services defined for chrome and firefox selenium images
+ * _docker-compose-portainer.yml_ : The Portainer stack for managing docker stack via gui
 
 Sample custom php extension enabled Dockerfiles:\
 (For build instructions, see the Readme file in the php-image-options folder. Alternately you can pull the images from here: https://hub.docker.com/r/dhluther/php/ )
@@ -24,6 +25,7 @@ Sample custom php extension enabled Dockerfiles:\
  
 Additional Files:
  * _mysite.conf_ : Sample nginx configuration for this application
+ * _mysite2.conf_ : Sample nginx configuration with alternate default index file
  * _root_db_password.txt_ : Secret file for the mysql image
  * _composer.json_ : Sample composer file 
  

@@ -1,0 +1,4 @@
+docker swarm init
+
+# exit the swarm even if it's the only machine in the swarm
+docker swarm leave -f

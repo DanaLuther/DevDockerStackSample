@@ -1,5 +1,7 @@
 version: "3.4"
 
+# Very basic stack sample
+
 services:
 
   nginx:

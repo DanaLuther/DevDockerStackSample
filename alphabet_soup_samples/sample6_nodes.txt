@@ -1,0 +1,7 @@
+docker node ls -f name=demovm3
+
+#drain a node for maintenance
+docker node update —availability=drain $(docker node ls -q -f name=demovm3)
+
+#re-activate a drained node
+docker node update —availability=active $(docker node ls -q -f name=demovm3)

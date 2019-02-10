@@ -1,0 +1,17 @@
+# Create a docker machine vm to mimic a remote machine as manager
+docker-machine create --driver virtualbox default demovm2
+docker-machine start demovm2
+docker-machine env demovm2
+
+# Assign the settings for this docker-machine to the current terminal window
+eval $(docker-machine env demovm2)
+
+# If this machine is to be the manager, initialize the swarm on the same terminal
+docker swarm init --advertise-addr=$(docker-machine ip demovm2)
+
+# Second terminal window - create docker-machine to work as a remote worker
+docker-machine create --driver virtualbox default demovm3
+docker-machine start demovm3
+docker-machine env demovm3
+eval $(docker-machine env demovm3)
+

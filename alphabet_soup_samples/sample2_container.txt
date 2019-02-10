@@ -1,0 +1,31 @@
+# Deploy the stack before running these samples
+
+# synonymous commands - container is optional/assumed, but best practice is to include it
+docker container exec -it $(docker ps -lq -f name=sunshine_php-cli) bash
+docker exec -it $(docker ps -lq -f name=sunshine_php-cli) bash
+
+# show php is working from /var/www/html/
+container> php command-line.php
+
+# synonymous commands - container is optional/assumed, but best practice is to include it
+docker container run --rm --interactive --tty --volume $PWD:/app composer install
+docker run --rm --interactive --tty --volume $PWD:/app composer install
+
+docker container cp sample.txt $(docker ps -lq -f name=sunshine_php-cli):/var/www/html/sample.txt
+#show file is present in the container
+docker exec -it $(docker ps -lq -f name=sunshine_php-cli) ls /var/www/html
+
+# Ensure ~/Docker\ Volumes/sunshine/ folder exists, and contains a composer.json file
+ls ~/Docker\ Volumes/sunshine/
+
+docker volume create sunshine --opt type=none --opt device=~/Docker\ Volumes/sunshine/ \
+	--opt o=bind --label "com.envisageinternational.description=SUNSHINE Files"
+
+docker volume ls -f name=sunshine
+docker volume inspect sunshine
+
+# Run the same command as before, but now with the named volume being used in the container
+docker container run --rm --interactive --tty --volume sunshine:/app composer install
+
+# See composer.lock and vendor directory now present
+ls ~/Docker\ Volumes/sunshine/
