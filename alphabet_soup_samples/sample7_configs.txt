@@ -1,17 +1,17 @@
-docker config create sunshine_mysite.2 ./mysite2.conf
+docker config create cascadia_mysite.2 ./mysite2.conf
 
 # open http://localhost/
 
-docker service update sunshine_nginx --config-rm sunshine_mysite \
-	--config-add source=sunshine_mysite.2,target=/etc/nginx/conf.d/default.conf
+docker service update cascadia_nginx --config-rm cascadia_mysite \
+	--config-add source=cascadia_mysite.2,target=/etc/nginx/conf.d/default.conf
 
 # open http://localhost/
 
-docker service inspect sunshine_nginx | grep 'Configs' -A 10
+docker service inspect cascadia_nginx | grep 'Configs' -A 10
 
-docker service rollback sunshine_nginx
+docker service rollback cascadia_nginx
 
 # open http://localhost/
 
 docker config create xdebug ./xdebug.ini
-docker service update --config-add source=xdebug,target=/usr/local/etc/php/xdebug.ini sunshine_php
+docker service update --config-add source=xdebug,target=/usr/local/etc/php/xdebug.ini cascadia_php

@@ -1,16 +1,16 @@
-docker stack deploy -c docker-compose.yml sunshine
+docker stack deploy -c docker-compose.yml cascadia
 
 # open http://localhost/
 
-docker stack ps sunshine
+docker stack ps cascadia
 
-docker stack services sunshine
+docker stack services cascadia
 docker service ls
 
 docker stack deploy -c docker-compose-portainer.yml portainer
 #Note difference between stack services and service ls now that there are two stacks
 
-docker stack rm sunshine
+docker stack rm cascadia
 docker stack rm portainer
 
 # open http://localhost/

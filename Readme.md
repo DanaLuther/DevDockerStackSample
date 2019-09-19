@@ -1,10 +1,10 @@
 # Converting your DEV Environment to a Docker Stack
 
 To start this basic LEMP stack:\
-```docker stack deploy -c docker-compose.yml sunshine```
+```docker stack deploy -c docker-compose.yml cascadia```
 
 To take the stack down:\
-```docker stack rm sunshine```
+```docker stack rm cascadia```
 
 Sample Web Folder:
  * _public_html/_ : This folder is mapped to the container and will update as you modify the files within it directly.

@@ -7,14 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>HELLO SunshinePHP</title>
+    <title>HELLO Cascadia PHP</title>
 </head>
 <body>
 <div class="jumbotron text-center">
-    <h1>Hello, SunshinePHP!</h1>
+    <h1>Hello, Cascadia PHP!</h1>
 	<div class="row">
-		<div class="col-6 offset-sm-3">
+		<div class="col-6 offset-sm-3" style="position: relative;">
 			<img src="/img/lobby-whale.jpg" class="img-fluid" />
+			<img src="/img/cascadia-logo.png" class="img-fluid" style="position: absolute; top: 2rem;right: 3rem;" />
 		</div>
 	</div>
 
