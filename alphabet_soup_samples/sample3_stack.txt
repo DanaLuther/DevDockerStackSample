@@ -1,16 +1,16 @@
-docker stack deploy -c docker-compose.yml sunshine
+docker stack deploy -c docker-compose.yml phpworld
 
 # open http://localhost/
 
-docker stack ps sunshine
+docker stack ps phpworld
 
-docker stack services sunshine
+docker stack services phpworld
 docker service ls
 
 docker stack deploy -c docker-compose-portainer.yml portainer
 #Note difference between stack services and service ls now that there are two stacks
 
-docker stack rm sunshine
+docker stack rm phpworld
 docker stack rm portainer
 
 # open http://localhost/

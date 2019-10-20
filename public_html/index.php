@@ -8,13 +8,14 @@
 </head>
 <body>
 <div class="jumbotron text-center">
-    <h1>Hello, SunshinePHP!</h1>
+    <h1>Hello, php[world]!</h1>
     <img src="/img/horizontal.png"/> <br/>
+	<img src="/img/phpworld2019.png" /><br />
     PHP Version: <?= phpversion(); ?><br/>
 	<?php
 	if ( extension_loaded( 'mysqli' ) )
 	{
-		$db = new \mysqli( 'db', 'root', 'sunshinephp' );
+		$db = new \mysqli( 'db', 'root', 'phpworld' );
 		echo "MySQL Version: " . $db->server_version;
 	} else
 	{

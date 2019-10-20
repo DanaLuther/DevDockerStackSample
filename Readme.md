@@ -1,10 +1,10 @@
 # Converting your DEV Environment to a Docker Stack
 
 To start this basic LEMP stack:\
-```docker stack deploy -c docker-compose.yml sunshine```
+```docker stack deploy -c docker-compose.yml phpworld```
 
 To take the stack down:\
-```docker stack rm sunshine```
+```docker stack rm phpworld```
 
 Sample Web Folder:
  * _public_html/_ : This folder is mapped to the container and will update as you modify the files within it directly.
@@ -19,7 +19,7 @@ Sample docker-compose files:
 Sample custom php extension enabled Dockerfiles:\
 (For build instructions, see the Readme file in the php-image-options folder. Alternately you can pull the images from here: https://hub.docker.com/r/dhluther/php/ )
  * _php-image-options/Dockerfile-7-fpm_ : Base PHP 7-fpm image with the MySQLi extension enabled
- * _php-image-options/Dockerfile-7-fpm-all-the-goodies_ : Base PHP 7-fpm image with the MySQLi, mcrypt, zip, and iconv
+ * _php-image-options/Dockerfile-7-fpm-all-the-goodies_ : Base PHP 7-fpm image with the MySQLi and iconv
  
 
  

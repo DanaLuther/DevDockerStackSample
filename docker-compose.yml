@@ -24,13 +24,12 @@ services:
       - "443:443"
     depends_on:
       - php
-      - db
     labels:
       com.envisageinternational.desc: "Nginx Container"
     command: ['sh','-c',"exec nginx -g 'daemon off;'"]
 
   db:
-    image: mysql
+    image: mysql:5.7
     ports:
       - "3306:3306"
     networks:
@@ -47,7 +46,7 @@ services:
       - db_pwd
 
   php:
-    image: php:7.0-fpm
+    image: php:7.3-fpm
     networks:
       - web
     depends_on:
@@ -66,7 +65,7 @@ services:
       com.envisageinternational.desc: "PHP-FPM Container"
 
   php-cli:
-    image: php:7.0-cli
+    image: php:7.3-cli
     networks:
       - web
     deploy:

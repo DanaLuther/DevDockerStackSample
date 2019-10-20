@@ -1,15 +1,15 @@
 #Re-deploy the stack before running these samples
 
 #Inspect the service by finding it by name
-docker service inspect $(docker service ls -q -f name=sunshine_nginx)
+docker service inspect $(docker service ls -q -f name=phpworld_nginx)
 
-docker service scale sunshine_nginx=2
+docker service scale phpworld_nginx=2
 
 #Find the image we want to replace
 docker image ls -f reference=nginx
 
 #Replace the active image
-docker service update --image=nginx:mainline-alpine sunshine_nginx
+docker service update --image=nginx:mainline-alpine phpworld_nginx
 
 #Rollback the change
-docker service rollback sunshine_nginx
+docker service rollback phpworld_nginx
