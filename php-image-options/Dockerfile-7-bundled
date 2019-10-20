@@ -1,0 +1,12 @@
+FROM php:7.3-fpm as phpworld_php
+RUN apt-get update && apt-get install -y \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libpng-dev \
+    && docker-php-ext-install -j$(nproc) iconv mysqli
+
+COPY ../public_html/ /var/www/html
+
+FROM nginx as phpworld_nginx
+COPY ../public_html/ /var/www/html
+COPY ./mysite.conf /etc/nginx/conf.d/default.conf

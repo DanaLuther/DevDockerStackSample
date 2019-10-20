@@ -1,0 +1,63 @@
+version: "3.4"
+
+services:
+
+  nginx:
+    image:  dhluther/nginx:phpworld-demo
+    networks:
+      - web
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      labels:
+        com.envisageinternational.desc: "Nginx Service"
+    ports:
+      - "8081:80"
+      - "443:443"
+    depends_on:
+      - php
+    labels:
+      com.envisageinternational.desc: "Nginx Container"
+    command: ['sh','-c',"exec nginx -g 'daemon off;'"]
+
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    networks:
+      - web
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints: [ node.role == manager ]
+    environment:
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_pwd
+    secrets:
+      - db_pwd
+
+  php:
+    image: dhluther/php:phpworld-demo
+    networks:
+      - web
+    depends_on:
+      - db
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      labels:
+        com.envisageinternational.desc: "PHP-FPM Service"
+    ports:
+      - "9000:9000"
+    labels:
+      com.envisageinternational.desc: "PHP-FPM Container"
+
+networks:
+  web:
+
+secrets:
+  db_pwd:
+    file: ./root_db_password.txt
