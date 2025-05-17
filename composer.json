@@ -1,5 +1,5 @@
 {
-    "name": "dhluther/phpworld2019",
+    "name": "dhluther/phptek2025",
     "description": "Sample composer.json file for illustrating the use of the composer docker image",
     "type": "project",
     "authors": [
@@ -9,6 +9,6 @@
         }
     ],
     "require": {
-        "twbs/bootstrap": "^4.0"
+        "twbs/bootstrap": "^5.3"
     }
 }

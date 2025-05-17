@@ -3,7 +3,7 @@ version: "3.4"
 services:
 
   nginx:
-    image:  dhluther/nginx:phpworld-demo
+    image:  dhluther/nginx:phptek-demo
     networks:
       - web
     deploy:
@@ -22,7 +22,7 @@ services:
     command: ['sh','-c',"exec nginx -g 'daemon off;'"]
 
   db:
-    image: mysql:5.7
+    image: mysql:8.0
     ports:
       - "3306:3306"
     networks:
@@ -39,7 +39,7 @@ services:
       - db_pwd
 
   php:
-    image: dhluther/php:phpworld-demo
+    image: dhluther/php:phptek-demo
     networks:
       - web
     depends_on:

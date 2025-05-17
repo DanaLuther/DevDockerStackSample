@@ -8,14 +8,14 @@
 </head>
 <body>
 <div class="jumbotron text-center">
-    <h1>Hello, php[world]!</h1>
+    <h1>Hello, php[tek]!</h1>
     <img src="/img/horizontal.png"/> <br/>
-	<img src="/img/phpworld2019.png" /><br />
+	<img src="https://2025.phptek.io/assets/images/phptek-2025.svg" width="200" /><br />
     PHP Version: <?= phpversion(); ?><br/>
 	<?php
 	if ( extension_loaded( 'mysqli' ) )
 	{
-		$db = new \mysqli( 'db', 'root', 'phpworld' );
+		$db = new \mysqli( 'db', 'root', 'phptek' );
 		echo "MySQL Version: " . $db->server_version;
 	} else
 	{

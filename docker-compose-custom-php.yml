@@ -27,7 +27,7 @@ services:
     command: ['sh','-c',"exec nginx -g 'daemon off;'"]
 
   db:
-    image: mysql:5.7
+    image: mysql:8.0
     ports:
       - "3306:3306"
     networks:
@@ -44,7 +44,7 @@ services:
       - db_pwd
 
   php:
-    image: dhluther/php:7.3-fpm-mysql
+    image: dhluther/php:8.4-fpm-mysql
     networks:
       - web
     depends_on:
@@ -63,7 +63,7 @@ services:
       com.envisageinternational.desc: "PHP-FPM Container"
 
   php-cli:
-    image: php:7.3-cli
+    image: php:8.4-cli
     networks:
       - web
     deploy:

@@ -1,4 +1,4 @@
-FROM php:7.3-fpm as phpworld_php
+FROM php:8.4-fpm AS phptek_php
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
@@ -7,6 +7,6 @@ RUN apt-get update && apt-get install -y \
 
 COPY ../public_html/ /var/www/html
 
-FROM nginx as phpworld_nginx
+FROM nginx AS phptek_nginx
 COPY ../public_html/ /var/www/html
 COPY ./mysite.conf /etc/nginx/conf.d/default.conf
