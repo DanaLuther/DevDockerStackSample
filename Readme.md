@@ -18,8 +18,8 @@ Sample docker-compose files:
 
 Sample custom php extension enabled Dockerfiles:\
 (For build instructions, see the Readme file in the php-image-options folder. Alternately you can pull the images from here: https://hub.docker.com/r/dhluther/php/ )
- * _php-image-options/Dockerfile-8-fpm_ : Base PHP 7-fpm image with the MySQLi extension enabled
- * _php-image-options/Dockerfile-8-fpm-all-the-goodies_ : Base PHP 7-fpm image with the MySQLi and iconv
+ * _php-image-options/Dockerfile-8-fpm_ : Base PHP 8-fpm image with the MySQLi extension enabled
+ * _php-image-options/Dockerfile-8-fpm-all-the-goodies_ : Base PHP 8-fpm image with the MySQLi and iconv
  
 
  

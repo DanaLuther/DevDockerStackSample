@@ -20,7 +20,6 @@
 	</div>
 
 </div>
-</div>
 
 <div class="text-center">
     <a href="phpinfo.php" class="btn btn-lg btn-primary">Click here to check the php settings</a>
